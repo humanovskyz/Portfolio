@@ -1,4 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Arimo:ital,wght@0,400..700;1,400..700&family=Comic+Relief:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Arimo:ital,wght@0,400..700;1,400..700&family=Comic+Relief:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@media (max-width: 768px) {
+    /* 1. Ajusta o título para caber na tela */
+    main h1 {
+        font-size: 40px;
+    }
+
+    /* 2. Ajusta o container principal */
+    .container {
+        width: 90%;
+        margin: 10px auto;
+        padding: 20px 10px;
+    }
+
+    /* 3. Ajusta o box de skills */
+    .box-skills {
+        margin: 0 10px;
+        padding: 10px;
+    }
+
+    /* 4. Faz os vídeos (YouTube e Blender) ocuparem 100% da largura disponível */
+    .video-card, .videoblender {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 5. Ajusta o iframe e o vídeo para manterem a proporção de cinema (16/9) */
+    iframe, .blender {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    /* 6. Ajusta o Sobre Mim */
+    .sobremim {
+        padding: 15px;
+    }
+}
 
 @keyframes pulso{
     0%{
@@ -56,6 +95,8 @@ main h1{
     margin-top: 0;
 }
 .box-skills{
+    font-family: Archivo Black;
+    font-size: 25px;
     text-align: center;
     justify-content: center;
     padding: 30px 40px;
@@ -97,6 +138,58 @@ iframe:hover {
 .videos{
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 30px;
+    width: 100%;
+}
+
+.sobremim{
+    background-color: white;
+    color: black;
+    padding: 20px 30px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 4px 4px 40px black;
+}
+
+.blender{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+.videoblender{
+    width: auto;
+    height: 600px;
+    position: relative;
+    overflow: hidden;  
+    margin: 40px auto;
+    border-radius: 40px;
+    cursor: pointer;     
+}
+.videoblender .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.4s ease;
+    border-radius: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.videoblender:hover .overlay {
+    opacity: 1;
 }
